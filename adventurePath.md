@@ -7,15 +7,14 @@
       * cat | tail
         * cat | tail -n 20
         * cat | tail -f
-          * tail -f "pattern" bigLogfile.txt | grep >> filtered.txt 
-            * tail -f filtered.txt
+          * tail -f bigLogfile.txt | grep "pattern" 
             * open new terminal and do echo "more lines added with or without pattern" >> bigLogFile.txt 
-      * cat | grep 
     * head > out.txt 
     * head >> outCont.txt
-    * grep | sort
-    * grep | sort | uniq 
-    * grep | sort | uniq -c
+    * (After you have also familarized yourself with grep):
+      * grep | sort
+      * grep | sort | uniq 
+      * grep | sort | uniq -c
       * grep | sort | uniq -c | sort -n
       * grep | sort | uniq -c | sort -nr
       * grep | sort | uniq -c | sort -nrk 1
