@@ -28,25 +28,25 @@
     * grep -v 
     * grep -A, grep -B, grep -C
     * RegEx syntax
-      1. character classes
+      * character classes
         * digits
-        * digits and literal
-        * find all "years"
-      2. quantifiers
-        * exact
+        * mixing digits and literal
+          * find all "years"
+      * quantifiers
+        * exact number 
         * ranges
         * shorthands for 0-1, 0-, 1- 
-        * quantifiers are greedy. Only -P can make them non-greedy
+        * NOTE: quantifiers are normally "greedy". Only the "-P style" (as opposed to "-E style") can make them non-greedy.
         * find all ip-addresses
         * find all URLs
       3. Anchors
         * beginning or end of line
         * beginning or end of "word"
-      4. catching
+      4. catching just the matched part of the line
         * grep -o
-        * non-catching
+        * non-catching part of pattern
         * lookahead and lookbehind, defining what's before and after the thing to match, without catching
-  * awk
+  * the awk util
     * awk '{ print $2 " " $NF }'
     * awk '{ print $(NF-1) }'
     * awk -F ";"
