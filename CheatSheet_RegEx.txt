@@ -1,0 +1,49 @@
+character classes, which kind of character
+                            egrep           VSCode/grep -P  inverse in egrep    inverse in VSCode
+letters (a-z and A-Z)       [[:alpha:]]     \w              [^_[:alpha:]]       \W 
+digits                      [[:digit:]]     \d              [^_[:digit:]]       \D 
+letters and digits          [[:alnum:]]                     [^_[:alnum:]]     
+"word" = abive plus _       \w              \W              \W                  \W
+whitespace (space, tabs)    [[:space:]]     \s              [^_[:space:]]       \S
+any character               .               .
+the character .             \.              \.
+the character \             \\              \\
+
+
+quantifiers, how many of the character class
+(greedy)                    egrep           VSCode/grep -P
+0 or 1                      ?               ? 
+0 or more                   *               *
+1 or more                   +               +
+exactly 6                   {6}             {6}
+3, 4, 5 or 6                {3,6}           {3,6}
+minimum 3 ( >=3 )           {3,}            {3,}
+maximum 6 ( <=6 )           {,6}            {,6}
+To make the above "lazy"= "non-greedy" and make the shortest interpretation, use VSCode or "grep -P" and add ?
+
+
+Anchors, "character of zero length", between the actual characters
+                            egrep          VSCode/grep -P  inverse in egrep    inverse in VSCode
+beginning of line           ^              ^
+end of line                 $              $
+beginning of word           \<             
+end of word                 \>              
+any word border             \b             \b               \B                  \B 
+
+
+Make your own selection of characters, "one of THESE charcters"
+                            egrep               VSCode/grep -P
+a or A                      [aA]                [aA]
+a, b or "^"                 [ab^]               [ab^]  
+not any of K or k           [^Kk]               [^Kk] 
+not a, b, ...Z              [^a-z]              [^a-z]
+not a, b, c, or "-"         [^a-b-]             [^a-b-]
+
+
+Alternations, "one of these strings"
+                            egrep          VSCode/grep -P
+"abc", "def" OR "xyz"       (abc|def|xyz)       (abc|def|xyz)
+
+
+
+

@@ -1,0 +1,36 @@
+take output from one command A and 
+    send as input to next util B            A | B           head test.txt | grep -P "version\d"
+    save it to file B.txt with overwrite    A > B.txt       grep -P "version\d" test.txt > myfilteredFile.txt
+    save it to file B.txt with append       A >> B.txt      grep -P "version\d" test.txt >> myfilteredFile.txt
+
+
+utils:
+cat 				write the whole file to screen
+head test.txt               	write the first 10 lines
+head -n 25 test.txt         	write the first 25 lines
+tail test.txt               	write the last 10 lines
+tail -n 25 test.txt         	write the last 25 lines
+tail -f test.txt            	write the last 10 lines and if anything is added, write that too. (quit with q)
+
+grep "pattern" test.txt         print out all lines in test.txt where there is a match to the BASIC POSIX style regEx "pattern"
+grep -E "pattern" test.txt      print out all lines in test.txt where there is a match to the Extended POSIX style regEx "pattern"
+grep -P "pattern" test.txt      print out all lines in test.txt where there is a match to the PERL style regEx "pattern"
+egrep                           same as grep -E 
+                                -E and -P conflict and can not be used together. 
+grep -cE "pattern" test.txt     print out THE NUMBER of lines in test.txt where there is a match to the Extended POSIX style regEx "pattern"
+grep -c "" test.txt             print out the number of lines in test.txt (because there is a match to the SIMPLE regex "" on each line)
+grep -vE "pattern" test.txt     print out all lines in test.txt where THERE IS NO match to the Extended POSIX style regEx "pattern"
+grep -Eo "pattern" test.txt     print out ONLY THE MATCHing parts of lines in test.txt (where there is a match to the Extended POSIX style regEx "pattern")
+
+
+sort test.txt               write the lines in test.txt in alphabetical order. Write all duplicates.
+sort -k2 test.txt           write the lines in test.txt, ordered alphabetically after the SECOND "word". Write all duplicates.
+sort -n                     sort, but with numerical orede instead of alphabetical. E g 10 is before 9 in alphabetical order.
+sort -r                     sort, but reverse the order.
+
+uniq test.txt               write the lines in test.txt, but ignore any line that is identical to the previous one.
+uniq -c test.txt            same as uniq, but also write the number of times a line is repeated.
+
+awk '{ print $2  " " $NF }' test.txt    print the second and the last "word" of each line, with a space between          
+awk -F ";" '{print $4 } test.txt        print the fourth group on each line, but use semicolon as what defines the separation of groups
+

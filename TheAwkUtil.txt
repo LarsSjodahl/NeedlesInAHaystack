@@ -1,0 +1,3 @@
+
+awk '{ print $2  " " $NF }' test.txt    print the second and the last "word" of each line, with a space between          
+awk -F ";" '{print $4 } test.txt        print the fourth group on each line, but use semicolon as what defines the separation of groups

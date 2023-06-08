@@ -1,0 +1,25 @@
+For the RegEx part. Use the CheatSheet_RegEx.txt and Recipes_for_regex for reference. 
+Try to not look at the Recipes_for_regex until you've tried yourself.
+
+grep usage, which will print to the screen: 
+(a) grep -option 'pattern' file.txt
+(b) someCommandThatPrintsToTheScreen | grep -option 'pattern' 
+
+options ("switches") can normally be combined, except -E and -P
+grep -c will count the number of lines that matches the pattern.
+grep -c '' counts lines
+grep -A 3
+grep -B 2
+grep -C 2
+
+
+RegEx syntax
+A date in the format 2023-06-08 can be decribed loosely like "four digits"-"two digits"-"two digits" or \d{4}-\d{2}-\d{2}.
+That regex will find all dates, but also include things that are not valid dates, like 2023-13-01 or 2023-05-32.
+But sometimes it's good enough, and you don't get many "false hits", i e matches that aren't valid dates.
+If you want to constrain \d{2}, which can be anything between 00 and 99, you can replace one of the digits with e g [0123].
+Try to reduce the number of not-dates in your matches by improving the expresssion \d{4}-\d{2}-\d{2}.
+
+
+Using the flexible quantifiers:
+Use the quantifiers to find URLs in the test files. 

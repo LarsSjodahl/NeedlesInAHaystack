@@ -1,0 +1,14 @@
+Use the CheatSheet_chaining_and_utils.txt for reference.
+This part does not contain any regex, just how to combine utils together.
+
+Try using combinations of cat, head and tail on one of the test files.
+
+piping with grep:
+try finding the dates, URLs, GUIDs or Ip-addresses in test-files using
+grep '<relevant pattern>' | sort 
+grep '<relevant pattern>' | sort | uniq 
+grep '<relevant pattern>' | sort | uniq -c 
+grep '<relevant pattern>' | sort | uniq -c | sort
+grep '<relevant pattern>' | sort | uniq -c | sort -n
+grep '<relevant pattern>' | sort | uniq -c | sort -nr
+grep '<relevant pattern>' | sort | uniq -c | sort -nrk 1
