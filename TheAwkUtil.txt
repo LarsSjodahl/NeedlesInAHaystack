@@ -1,3 +1,9 @@
+The awk util has three stages, but the first ("begin" like a set-up) and the last ("end" where some final results can be processed) are optional.
+The middle stage defines what awk does to each line in the input_file, or the lines that are piped to it.
+Each line is treated as a series of "Fields", which by default is separated by spaces, but you can change that to e g semicolon by using awk -F ";"
+The Fields are put in numbered variables: $0 is the whole line, $1 is the first field, NF is the total Number of Fields, and $NF is the last Field.
+
+The most useful thing is to print out only some of the fields on a line like this:
 
 awk '{ print $2  " " $NF }' test.txt    print the second and the last "word" of each line, with a space between          
 awk -F ";" '{print $4 } test.txt        print the fourth group on each line, but use semicolon as what defines the separation of groups
