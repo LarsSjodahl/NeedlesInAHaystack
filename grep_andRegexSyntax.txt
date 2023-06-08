@@ -11,7 +11,7 @@ grep -c '' counts lines
 grep -A 3
 grep -B 2
 grep -C 2
-
+grep -o       return only the match
 
 RegEx syntax
 A date in the format 2023-06-08 can be decribed loosely like "four digits"-"two digits"-"two digits" or \d{4}-\d{2}-\d{2}.
@@ -22,4 +22,26 @@ Try to reduce the number of not-dates in your matches by improving the expresssi
 
 
 Using the flexible quantifiers:
-Use the quantifiers to find URLs in the test files. 
+Find URLs in the test files. 
+Find IP addresses.
+Find GUIDs.
+Find Empty lines.
+Find non-empty lines.
+Using grep -cv Count the number of non.emtpy lines.
+Find lines from stackTrace, with only leading whitespaces and then literal "at".
+Using grep -A, Find lines that are just above the lines with "whitespace and at", (Ok to include the lines with at as well)
+Do the above but filter out the lines with "whitespace and at" (using pipe and another grep).
+
+Find all lines with what looks like dates. (four digits - two digits - two digits, like 2023-05-31 )
+Count the above.
+Specify months to only 01-12, and days to only 01-31 (accept that 31st of June is invalid). Do you find any invalid dates? How many?
+
+Like the above: Find all lines with what looks like IP addresses, like (1-3 digits)-(1-3 digits)-(1-3 digits)-(1-3 digits).
+Count them.
+Specify each 3-digit number to 0-255 (1 to 3 digits). (Try yourself, but the correct pattern is provided in "recipes".) 
+How many matches do you get?
+Using two grep, piped together, can you find the ones that "look like" IpAddresses, but that aren't valid?
+If you use sort to order the lines, How many unique lines with IP addresses do you get? How many with invalid IP-addresses?
+using grep -Po, return only the IP-addresses, and not the whole lines. 
+
+
