@@ -29,7 +29,7 @@ Find Empty lines.
 Find non-empty lines.
 Using grep -cv Count the number of non.emtpy lines.
 Find lines from stackTrace, with only leading whitespaces and then literal "at".
-Using grep -A, Find lines that are just above the lines with "whitespace and at", (Ok to include the lines with at as well)
+Using grep -B5 , Find lines that are just above the lines with "whitespace and at", (Ok to include the lines with at as well)
 Do the above but filter out the lines with "whitespace and at" (using pipe and another grep).
 
 Find all lines with what looks like dates. (four digits - two digits - two digits, like 2023-05-31 )
